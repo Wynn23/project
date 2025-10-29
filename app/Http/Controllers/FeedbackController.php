@@ -25,11 +25,12 @@ class FeedbackController extends Controller
         ]);
 
         // Simpan feedback ke database
-        Feedback:: created([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'message' => $validated['message'],
-        ]);
+      Feedback::create([
+    'nama' => $validated['name'],
+    'email' => $validated['email'],
+    'pesan' => $validated['message'],
+]);
+
 
         // Kirim notifikasi sukses atau terima kasih
         return redirect()->route('feedback.create')->with('success', 'Terima kasih atas feedback Anda!');
